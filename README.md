@@ -62,11 +62,12 @@ o
 ```bash
 npm install vue-router
 ```
+
 Y configurar el router en tu archivo `src/router/index.js`:
 
 ```js
 // src/router/index.js
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router"
 
 const routes = [
   {
@@ -81,27 +82,28 @@ const routes = [
       },
     ],
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory("/"),
   routes,
   scrollBehavior() {
-    document.getElementById("app").scrollIntoView();
+    document.getElementById("app").scrollIntoView()
   },
-});
+})
 
-export default router;
+export default router
 ```
+
 Luego úsalo en el archivo `main.js` de la siguiente manera:
 
 ```jsx
 // src/main.js
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from "vue"
+import App from "./App.vue"
+import router from "./router"
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).mount("#app")
 ```
 
 ### Instalación de Bootstrap
@@ -123,7 +125,7 @@ Para hacer que los estilos de Bootstrap estén disponibles en toda la aplicació
 ```javascript
 // src/main.js
 
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css"
 ```
 
 ### Iteración 1.1 | Crear componentes
@@ -141,7 +143,7 @@ Si quieres darle estilo, refresca tu memoria en Bootstrap en la [documentación]
 
 ### Iteración 1.2 | Componente Navbar
 
-La forma más sencilla de definir un componente en Vue es escribir una función de JavaScript, también conocida como función de componente. El Navbar debe mostrar el título *LAB - WikiCountries*.
+La forma más sencilla de definir un componente en Vue es escribir una función de JavaScript, también conocida como función de componente. El Navbar debe mostrar el título _LAB - WikiCountries_.
 
 ### Iteración 1.3 | Componente CountriesList
 
@@ -156,6 +158,7 @@ Ahora que nuestra lista de países está lista, debemos crear la página `Countr
 
 <router-view>
 ```
+
 Los componentes renderizados con Vue.js pueden leer la consulta con `this.$route`. Podemos usar esto para obtener la información que proviene de la barra de URL del navegador, por ejemplo, el código `alpha3Code` del país.
 
 **NOTA:** Para la pequeña imagen de la bandera, puedes usar el código `alpha2Code` en minúsculas e incrustarlo en la URL como se muestra a continuación:
@@ -180,7 +183,7 @@ Una vez que haya terminado de crear los componentes, la estructura de elementos 
 </template>
 
 <script setup>
-import NavBar from "./components/NavBar.vue";
+import NavBar from "./components/NavBar.vue"
 </script>
 
 <style></style>
